@@ -1,6 +1,6 @@
-# DriveOFF
+# supermarkets UPF blocker 
 
-WebExtension for estore (drive) using Open Food Facts Database
+WebExtension to block any upf from showing on supermarket sites  
 
 ## Compatible Browsers
 
@@ -9,20 +9,6 @@ WebExtension for estore (drive) using Open Food Facts Database
 * [x] Opera
 * [x] Vivaldi
 * [ ] Edge (*non testé*)
-
-## Introduction
-
-Fonctionne avec une poignée de drive pour l'instant, mais utilisant un système [modulaire](./docs/drive_config.md)  
-Ajoute sur les fiches produits les informations suivantes :
-
-* [x] Nutri-Score (qualité nutritionnelle de A à E)
-* [x] Groupe Nova (transformation des aliments de 1 à 4)
-* [x] Eco Score (impact environnemental de A à E)
-* [ ] Taux de nutriments
-* [ ] Additifs
-* [ ] Code-barre
-
-L'extension utilise les données d'[Open Food Facts](https://fr.openfoodfacts.org/) et la librairie de génération de code-barres [jsBarcode](https://github.com/lindell/JsBarcode)
 
 ## Build
 
@@ -40,35 +26,28 @@ yarn
 yarn build
 ```
 
+
+
 ## Installation
 
-_**DriveOFF** n'est pas encore disponible sur les store d'extensions, l'installation se fait depuis les sources._
+This extension is not yet available in the extension stores; installation is done from source.
 
-* Télécharger la dernière release
-* Décompresser l'archive à l'endroit de votre choix
+* Download the latest release
+* Extract the archive to your desired location
 
 ### Chromium
 
-* Lancer **Chromium**, **Chrome**, **Vivaldi** ou **Opera**
-* Taper dans la barre d'URL `chrome://extensions`
-* Activer le mode développeur
-* Cliquer sur "Chargez l'extension non empaquetée"
-* Sélectionner le dossier où vous avez décompressé la release téléchargée.
-* Enjoy !
+* Launch **Chromium**, **Chrome**, **Vivaldi**, or **Opera**
+* Type `chrome://extensions` in the address bar
+* Enable developer mode
+* Click "Load unpacked extension"
+* Select the folder where you extracted the downloaded extension.
+* Enjoy!
 
 ### Firefox
 
-* Lancer **Firefox**
-* Taper dans la barre d'URL `about:debugging#/runtime/this-firefox`
-* Cliquer sur "Charger un module complémentaire temporaire…"
-* Ouvrir le fichier `manifest.json` dans le dossier où vous avez décompressé la release téléchargée.
-* Enjoy !
-
-## Liste des drive compatibles
-
-* [x] auchan.fr (*fiches produit uniquement*)
-* [x] bio.coop (*fiches produit uniquement*)
-* [x] carrefour.fr
-* [ ] cora.fr
-* [x] intermarche.com
-* [ ] leclercdrive.fr
+* Launch **Firefox**
+* Type `about:debugging#/runtime/this-firefox` in the address bar
+* Click on "Load Temporary Add-on…"
+* Open the `manifest.json` file in the folder where you extracted the downloaded release.
+* Enjoy!
