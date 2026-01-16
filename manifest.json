@@ -1,39 +1,22 @@
 {
-  "manifest_version": 2,
-  "name": "UPF blocker",
-  "version": "1.0.0.0",
-  "icons": {
-    "16": "/img/icons/Drive_Off_1616.png",
-    "48": "/img/icons/Drive_Off_4848.png",
-    "128": "/img/icons/Drive_Off_128128.png"
-  },
-  "description": "blocking ultra processed foods on supermarket sites",
+  "manifest_version": 3,
+  "name": "UPF Blocker",
+  "version": "1.0.0",
+  "description": "Logs products and queries OpenFoodFacts",
   "permissions": [
-    "*://*.openfoodfacts.org/*"
+    "https://search.openfoodfacts.org/*"
+  ],
+  "host_permissions": [
+    "*://*/*"
   ],
   "content_scripts": [
     {
-      "matches": [ "https://*/*" ],
-      "css": [
-        "/css/myStyle.css"
-      ],
-      "run_at": "document_idle",
-      "js": [
-        "/js/external/slug.js",
-        "/js/lib/DOFFNode.js",
-        "/js/lib/ProductItem.js",
-        "/js/lib/ProductList.js",
-        "/js/lib/Drive.js",
-        "/js/drives/Auchan.js",
-        "/js/drives/Biocoop.js",
-        "/js/drives/Carrefour.js",
-        "/js/drives/Intermarche.js",
-        "/js/external/jbarcode.js",
-        "/js/content_script.js"
-      ]
+      "matches": ["<all_urls>"],
+      "js": ["js/getproduct.js"],
+      "run_at": "document_idle"
     }
   ],
-  "web_accessible_resources": [
-    "/img/*"
-  ]
+  "background": {
+    "service_worker": "js/background.js"
+  }
 }
